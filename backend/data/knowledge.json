@@ -1,0 +1,242 @@
+[
+  {
+    "id": "general-001",
+    "category": "general",
+    "title": "The reroute hierarchy",
+    "text": "Prefer keeping an item in use. Repair it first when that is practical, then reuse or donate it, then recycle it, and discard it only as a last resort. Each step down recovers less value and fewer materials."
+  },
+  {
+    "id": "general-002",
+    "category": "general",
+    "title": "Check local rules",
+    "text": "Collection points, accepted materials and disposal rules differ between cities and countries. Treat these guidelines as general advice and confirm details with your local waste authority or recycling centre."
+  },
+  {
+    "id": "general-003",
+    "category": "general",
+    "title": "What a photo can and cannot show",
+    "text": "A photo only shows visible condition. It cannot show whether an item works, whether a battery is healthy, or whether there is hidden damage. Always check function and safety yourself before deciding."
+  },
+  {
+    "id": "general-004",
+    "category": "general",
+    "title": "Why reuse beats recycling",
+    "text": "Making a new item usually has the biggest environmental footprint, so extending an item's life by repairing or reusing it generally saves more resources than recycling it. Recycling recovers materials but not the effort and energy already invested in the product."
+  },
+  {
+    "id": "general-005",
+    "category": "general",
+    "title": "Reusing at home",
+    "text": "If nobody wants an item, it can often be repurposed: old T-shirts become cleaning rags, glass jars become storage, cracked mugs become plant pots, and spare cables or screws go into a repair kit. Repurposing keeps items out of the waste stream."
+  },
+  {
+    "id": "repair-001",
+    "category": "repair",
+    "title": "When repair is worth it",
+    "text": "Repair is usually worthwhile when the fault is isolated (a loose hinge, a frayed cable, a worn zip) and the repair costs under about half the price of a replacement. The newer and better made the item is, the more likely a repair pays off."
+  },
+  {
+    "id": "repair-002",
+    "category": "repair",
+    "title": "Simple fixes to try first",
+    "text": "Many faults are cheap to fix: a blown fuse, flat or worn battery, loose screw, dirty contacts, a stuck button, a tangled or loose connector, or a missing hinge pin. Check the warranty before opening an item, because opening it yourself can void it."
+  },
+  {
+    "id": "repair-003",
+    "category": "repair",
+    "title": "Repairing electronics",
+    "text": "Cracked screens, worn batteries, damaged charging ports and failed power adapters are common repairable faults, and repairs are often worth it for laptops and phones that are only a few years old. Back up and wipe your data before handing a device to anyone."
+  },
+  {
+    "id": "repair-004",
+    "category": "repair",
+    "title": "Repairing furniture",
+    "text": "Wobbly joints, loose screws, scratched surfaces and torn upholstery are usually cheap to fix with glue, clamps, new screws or fabric. A cracked frame or broken load-bearing part can make an item unsafe, so have it assessed before you keep using it."
+  },
+  {
+    "id": "repair-005",
+    "category": "repair",
+    "title": "Repairing clothing, bags and shoes",
+    "text": "Missing buttons, small tears, loose seams, broken zips and worn soles can usually be fixed by a tailor, cobbler or a simple home mend. Repair is most worthwhile for well-made items that you still like."
+  },
+  {
+    "id": "repair-006",
+    "category": "repair",
+    "title": "When repair is rarely worth it",
+    "text": "Repair rarely makes sense for very cheap items, for products with glued or sealed cases and low resale value, or when the repair cost approaches the price of a new item. It is never appropriate for safety equipment that has been damaged, such as helmets and child car seats."
+  },
+  {
+    "id": "repair-007",
+    "category": "repair",
+    "title": "Where to find repair help",
+    "text": "Look for community repair cafes, local independent repair shops, the manufacturer's service centre, or step-by-step repair guides online. Ask for a written quote first and compare it with the replacement price."
+  },
+  {
+    "id": "donate-001",
+    "category": "reuse_donate",
+    "title": "Donation criteria",
+    "text": "Items that are clean, fully working and safe can be donated. Most charities do not accept damaged goods, used mattresses or expired safety items such as child car seats."
+  },
+  {
+    "id": "donate-002",
+    "category": "reuse_donate",
+    "title": "Preparing an item for donation",
+    "text": "Clean the item, test that it works, and include chargers, parts, manuals or matching pieces. Describe any flaws honestly so the receiving charity or person is not surprised."
+  },
+  {
+    "id": "donate-003",
+    "category": "reuse_donate",
+    "title": "Items charities usually cannot take",
+    "text": "Charities commonly refuse used mattresses and pillows, underwear, helmets, child car seats, items with missing safety parts, broken or heavily stained goods, and opened cosmetics. Call ahead if you are unsure what a charity accepts."
+  },
+  {
+    "id": "donate-004",
+    "category": "reuse_donate",
+    "title": "Donating electronics",
+    "text": "Working phones, laptops and tablets can often go to charities or refurbishers. Factory reset the device, remove your accounts, SIM and memory cards, and include the charger. Devices that no longer power on should go to e-waste recycling instead."
+  },
+  {
+    "id": "donate-005",
+    "category": "reuse_donate",
+    "title": "Donating clothing",
+    "text": "Clean clothes in wearable condition, without stains, holes or heavy wear, are good candidates for donation. Clothes that are too worn to wear should go to textile recycling or be reused as rags."
+  },
+  {
+    "id": "donate-006",
+    "category": "reuse_donate",
+    "title": "Donating furniture",
+    "text": "Stable, clean furniture without strong odours, pests or structural damage can often be donated or passed on. Bulky items usually need a pickup arrangement, and stained or broken upholstered pieces are often refused."
+  },
+  {
+    "id": "donate-007",
+    "category": "reuse_donate",
+    "title": "Selling or giving away locally",
+    "text": "For bulky or valuable items, a local giveaway group, community swap or second-hand marketplace is often faster than a charity. Photograph the item honestly and arrange pickup in a safe public place."
+  },
+  {
+    "id": "donate-008",
+    "category": "reuse_donate",
+    "title": "Books, toys and kitchenware",
+    "text": "Books in readable condition, complete toys with no missing small parts or safety recalls, and intact kitchenware without chips or cracks can usually be donated. Incomplete sets and damaged items are often refused."
+  },
+  {
+    "id": "donate-009",
+    "category": "reuse_donate",
+    "title": "Bicycles and sports gear",
+    "text": "Bicycles with working brakes and sound frames are welcomed by bike charities and community workshops, and even non-working bikes can be useful for parts. Helmets should not be donated because hidden impact damage cannot be seen."
+  },
+  {
+    "id": "recycle-001",
+    "category": "recycle",
+    "title": "E-waste recycling",
+    "text": "Electronics contain recoverable metals and hazardous materials. Never put them in household trash; use certified e-waste collection points."
+  },
+  {
+    "id": "recycle-002",
+    "category": "recycle",
+    "title": "Batteries",
+    "text": "Never put batteries in household trash or fire. Lithium batteries can start fires when crushed or short-circuited, so tape the terminals of loose batteries and use a battery drop-off point. Handle swollen batteries carefully and keep them away from heat."
+  },
+  {
+    "id": "recycle-003",
+    "category": "recycle",
+    "title": "Small appliances",
+    "text": "Kettles, toasters, hair dryers and other items with a plug, cord or battery count as e-waste. Take them to an e-waste collection point or a repair cafe, not the general bin."
+  },
+  {
+    "id": "recycle-004",
+    "category": "recycle",
+    "title": "Cables and chargers",
+    "text": "Old cables and chargers are e-waste and contain recoverable copper. If a charger still works and fits another device you own, keep it as a spare, otherwise take it to an e-waste collection point."
+  },
+  {
+    "id": "recycle-005",
+    "category": "recycle",
+    "title": "Light bulbs",
+    "text": "Fluorescent tubes and CFL bulbs contain mercury and need special collection. LED bulbs are generally treated as e-waste. Ordinary incandescent bulbs usually go in general waste, wrapped to prevent injury."
+  },
+  {
+    "id": "recycle-006",
+    "category": "recycle",
+    "title": "Textile recycling",
+    "text": "Clothing and fabric that are too worn, stained or damaged to wear can often go into textile recycling bins, where fibres are recovered for insulation, rags or new fabric. Keep textiles clean and dry, because soaked or mouldy items are usually rejected."
+  },
+  {
+    "id": "recycle-007",
+    "category": "recycle",
+    "title": "Glass bottles and jars",
+    "text": "Glass bottles and jars are widely recyclable. Rinse them and remove lids. Drinking glasses, mirrors, window glass, ceramics and light bulbs melt differently and are usually not accepted with bottle and jar glass."
+  },
+  {
+    "id": "recycle-008",
+    "category": "recycle",
+    "title": "Ceramics and mugs",
+    "text": "Ceramic mugs, plates and bowls are generally not accepted in normal recycling. If intact, donate or reuse them, for example as plant pots. If chipped or cracked, wrap them in paper and put them in general waste."
+  },
+  {
+    "id": "recycle-009",
+    "category": "recycle",
+    "title": "Metal items",
+    "text": "Scrap metal such as steel, aluminium and copper is highly recyclable and accepted by scrap-metal recyclers. Removing plastic or fabric parts first, where practical, makes recycling easier."
+  },
+  {
+    "id": "recycle-010",
+    "category": "recycle",
+    "title": "Plastic items",
+    "text": "Rigid, clean plastics are more often accepted for recycling than thin film or soiled plastic. Mixed-material items that cannot be separated are hard to recycle. Check the resin code and local rules."
+  },
+  {
+    "id": "recycle-011",
+    "category": "recycle",
+    "title": "Paper and cardboard",
+    "text": "Clean, dry paper and cardboard can be recycled. Greasy, wet or heavily soiled paper is usually not accepted and can contaminate the rest."
+  },
+  {
+    "id": "recycle-012",
+    "category": "recycle",
+    "title": "Mattresses and bulky items",
+    "text": "Used mattresses cannot normally be donated, but specialist services can recover their foam, springs and fabric. Large furniture and mattresses usually need a bulky-waste pickup or a drop-off at a recycling centre."
+  },
+  {
+    "id": "recycle-013",
+    "category": "recycle",
+    "title": "Footwear",
+    "text": "Worn shoes can often be resoled or repaired by a cobbler, and wearable pairs can be donated. Shoes that are beyond use go to a footwear or textile take-back scheme where one exists, otherwise to general waste."
+  },
+  {
+    "id": "discard-001",
+    "category": "discard",
+    "title": "When to discard",
+    "text": "Discard only when an item is unsafe to reuse, contaminated, or made of mixed materials that cannot be separated or recycled locally."
+  },
+  {
+    "id": "discard-002",
+    "category": "discard",
+    "title": "Contaminated and hygiene items",
+    "text": "Used sponges, toothbrushes, heavily soiled or mouldy items and similar goods cannot be safely donated or recycled. Seal them in a bag and put them in general waste."
+  },
+  {
+    "id": "discard-003",
+    "category": "discard",
+    "title": "Disposing of sharp or broken items",
+    "text": "Wrap broken glass, ceramics and sharp metal in several layers of paper or cardboard and label the package so waste handlers are protected. Do not put sharp items loose into a recycling bin."
+  },
+  {
+    "id": "discard-004",
+    "category": "discard",
+    "title": "Hazardous items never go in general waste",
+    "text": "Paint, solvents, pesticides, chemicals, medical sharps, batteries and electronics need special collection. Ask your local waste authority where to take them rather than putting them in the bin."
+  },
+  {
+    "id": "safety-001",
+    "category": "safety",
+    "title": "Safety-critical items",
+    "text": "Helmets, child car seats, life jackets and smoke detectors can be damaged in ways you cannot see. After a crash, visible damage or passing their expiry date they should not be reused or donated. Check the manufacturer's guidance and use a take-back scheme where one exists."
+  },
+  {
+    "id": "safety-002",
+    "category": "safety",
+    "title": "Protecting your data",
+    "text": "Before giving away, selling or recycling a phone, laptop, tablet or drive, back up what you need, sign out of your accounts, remove SIM and memory cards, and factory reset the device. For drives with sensitive data, use a secure erase tool or have them destroyed."
+  }
+]

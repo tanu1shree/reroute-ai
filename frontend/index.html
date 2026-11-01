@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReRoute AI</title>
+  <meta name="description" content="Upload a photo of an item to get a repair, reuse, recycle or discard recommendation." />
+  <link rel="icon" href="assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Silkscreen&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-in">
+      <a class="brand" href="#top" aria-label="ReRoute AI">
+        <img class="brand-mark" src="assets/logo.png" alt="" width="24" height="24" onerror="this.style.display='none'" />
+        <span>ReRoute AI</span>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="#scan" data-section="scan">Scan</a>
+        <a href="#guide" data-section="guide">Guide</a>
+        <a href="#impact" data-section="impact">Impact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="section" id="scan">
+      <div class="container">
+        <div class="sec-head">
+          <div><h1>Scan an item</h1><p class="lede">Upload a photo to get a recommended route.</p></div>
+          <ol class="flow" aria-label="Steps"><li>Upload</li><li>Review</li><li>Act</li></ol>
+        </div>
+
+        <div class="bench">
+          <div class="card scanner" id="scanner" data-state="empty">
+            <div class="card-head"><span class="label">Scanner</span><span class="state" id="scanner-state">Ready</span></div>
+            <div class="card-body">
+              <label class="dropzone" id="dropzone" for="file-input">
+                <input class="sr-only" type="file" id="file-input" accept="image/jpeg,image/png,image/webp" />
+                <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+                <div class="dz-empty" id="dz-empty">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><path d="M17 8l-5-5-5 5" /><path d="M12 3v12" /></svg>
+                  <p class="dz-title">Drop a photo or click to upload</p>
+                  <p class="dz-sub">JPG, PNG, WebP · max 10 MB</p>
+                </div>
+                <div class="dz-preview" id="dz-preview" hidden>
+                  <img id="preview" alt="Selected item" />
+                  <div class="scan-grid"></div>
+                  <div class="scanline"></div>
+                  <span class="stamp" id="stamp" hidden></span>
+                </div>
+              </label>
+
+              <div class="file-row" id="file-row" hidden><span class="file-name" id="file-name"></span><span class="file-meta" id="file-meta"></span></div>
+
+              <div class="details" id="details" hidden>
+                <fieldset class="seg">
+                  <legend class="label">Condition <span class="opt">optional</span></legend>
+                  <label><input type="radio" name="condition" value="" checked /><span>Auto</span></label>
+                  <label><input type="radio" name="condition" value="good" /><span>Good</span></label>
+                  <label><input type="radio" name="condition" value="worn" /><span>Worn</span></label>
+                  <label><input type="radio" name="condition" value="damaged" /><span>Damaged</span></label>
+                </fieldset>
+                <fieldset class="seg">
+                  <legend class="label">Works <span class="opt">optional</span></legend>
+                  <label><input type="radio" name="works" value="" checked /><span>Unknown</span></label>
+                  <label><input type="radio" name="works" value="yes" /><span>Yes</span></label>
+                  <label><input type="radio" name="works" value="no" /><span>No</span></label>
+                </fieldset>
+              </div>
+
+              <p class="error" id="error" role="alert" hidden></p>
+
+              <div class="panel" id="panel-actions">
+                <button class="btn btn-primary" id="analyze-btn" type="button" disabled>Analyze</button>
+                <button class="btn" id="clear-btn" type="button" hidden>Clear</button>
+              </div>
+              <div class="panel" id="panel-analysis" hidden aria-live="polite">
+                <ol class="stages" id="stages"></ol>
+                <div class="progress"><div class="progress-bar" id="progress-fill"></div></div>
+                <button class="btn btn-sm" id="cancel-btn" type="button">Cancel</button>
+              </div>
+              <div class="panel" id="panel-done" hidden>
+                <div class="done-actions">
+                  <button class="btn" id="edit-btn" type="button">Edit details</button>
+                  <button class="btn btn-primary js-again" type="button">New scan</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pane">
+            <div class="card" id="result-empty">
+              <div class="card-head"><span class="label">Result</span></div>
+              <div class="card-body guide-pane">
+                <div><h3>How it works</h3>
+                  <ol class="steps">
+                    <li><b>Upload</b><span>One clear photo of the item.</span></li>
+                    <li><b>Review</b><span>Check the AI assessment; add condition if you know it.</span></li>
+                    <li><b>Act</b><span>Follow the route, then ask the guide.</span></li>
+                  </ol></div>
+                <div><h3>Photo tips</h3>
+                  <ul class="tips"><li>One item per photo, filling most of the frame.</li><li>Good light, no blur.</li><li>For damage, show the problem area.</li></ul></div>
+                <div class="examples" id="examples" hidden><h3>Examples</h3><ul id="example-list" class="chips"></ul></div>
+              </div>
+            </div>
+
+            <div class="card result" id="result" hidden aria-live="polite">
+              <div class="card-head"><span class="label">Result</span><span class="label" id="res-rule">Rule: —</span></div>
+              <div class="card-body">
+                <ol class="journey" aria-label="Route">
+                  <li class="j-step" style="--i:0">
+                    <span class="j-node"><img id="j-thumb" alt="" /></span>
+                    <div class="j-text"><p class="j-title">Photo</p><p class="j-cap" id="j-cap-1"></p></div>
+                    <span class="j-line" aria-hidden="true"></span>
+                  </li>
+                  <li class="j-step" style="--i:1">
+                    <span class="j-node"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2" /><circle cx="12" cy="12" r="3" /></svg></span>
+                    <div class="j-text"><p class="j-title">Assessment</p><p class="j-cap" id="j-cap-2"></p></div>
+                    <span class="j-line" aria-hidden="true"></span>
+                  </li>
+                  <li class="j-step" style="--i:2">
+                    <span class="j-node" id="j-node-3"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h6l4-6h4M11 12l4 6h4" /></svg></span>
+                    <div class="j-text"><p class="j-title">Route</p><p class="j-cap" id="j-cap-3"></p></div>
+                    <span class="j-line" aria-hidden="true"></span>
+                  </li>
+                  <li class="j-step" style="--i:3">
+                    <span class="j-node j-final"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10" /></svg></span>
+                    <div class="j-text"><p class="j-title">Next step</p><p class="j-cap" id="j-cap-4"></p></div>
+                  </li>
+                </ol>
+
+                <div class="res-details">
+                  <div class="route-banner" style="--k:0"><div><p class="label">Recommended route</p><p class="verdict" id="res-verdict"></p></div></div>
+                  <div class="facts" style="--k:1">
+                    <div class="fact"><p class="label">Item</p><h3 id="res-item"></h3><p class="fact-note" id="res-item-note"></p></div>
+                    <div class="fact"><p class="label">Condition</p><p><span class="tag cond" id="res-condition"></span></p><p class="fact-note" id="res-condition-note"></p></div>
+                    <div class="fact"><p class="label">Confidence</p><h3 id="res-conf-text"></h3><div class="progress"><div class="progress-bar" id="res-conf"></div></div></div>
+                  </div>
+                  <div class="note" style="--k:2"><p class="label">Why</p><p id="res-reason"></p></div>
+                  <div class="note note-action" style="--k:2"><p class="label">Next step</p><p id="res-next"></p></div>
+                  <div class="alt" style="--k:3"><p class="label">Alternative</p><p id="res-alt"></p></div>
+                </div>
+              </div>
+              <div class="card-foot"><span>AI can be wrong. Verify before acting.</span><button class="btn btn-sm js-again" type="button">New scan</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="guide">
+      <div class="container">
+        <div class="sec-head"><div><h2>Guide</h2><p class="lede">Routes explained, and a chat grounded in the guideline library.</p></div></div>
+        <div class="split">
+          <div class="side">
+            <ul class="routes">
+              <li class="route-card rc-repair"><h3>Repair</h3><p>Fixable fault, worth repairing.</p></li>
+              <li class="route-card rc-reuse"><h3>Reuse / Donate</h3><p>Clean, working, safe to pass on.</p></li>
+              <li class="route-card rc-recycle"><h3>Recycle</h3><p>Materials can be recovered.</p></li>
+              <li class="route-card rc-discard"><h3>Discard</h3><p>Unsafe or unrecoverable.</p></li>
+            </ul>
+            <div><p class="label">Popular topics</p><ul class="chips" id="topic-list"></ul></div>
+          </div>
+          <div class="card chat">
+            <div class="card-head"><span class="label">Ask the guide</span><span class="state" id="chat-mode">Guide</span></div>
+            <p class="chat-context" id="chat-context">No item scanned yet</p>
+            <div class="chat-log" id="chat-log" aria-live="polite"></div>
+            <ul class="chips chat-suggest" id="chat-suggest"></ul>
+            <form class="chat-form" id="chat-form" autocomplete="off">
+              <label class="sr-only" for="chat-input">Question</label>
+              <input id="chat-input" type="text" placeholder="Ask a question…" />
+              <button class="btn btn-primary" type="submit">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="impact">
+      <div class="container">
+        <div class="sec-head">
+          <div><h2>Impact</h2><p class="lede">Outcomes of items assessed on this device.</p></div>
+          <div class="dash-tools"><span class="sample" id="sample-badge" hidden>Sample data</span><button class="btn btn-sm" id="reset-btn" type="button">Reset my data</button></div>
+        </div>
+        <div class="dash-grid">
+          <div class="card kpi"><span class="label">Assessed</span><span class="stat-num" id="stat-items">0</span><span class="kpi-sub" id="sub-items"></span></div>
+          <div class="card kpi"><span class="label">Kept in use</span><span class="stat-num" id="stat-keep">0</span><span class="kpi-sub" id="sub-keep"></span></div>
+          <div class="card kpi"><span class="label">Recycled</span><span class="stat-num" id="stat-recycle">0</span><span class="kpi-sub" id="sub-recycle"></span></div>
+          <div class="card kpi"><span class="label">Discarded</span><span class="stat-num" id="stat-discard">0</span><span class="kpi-sub" id="sub-discard"></span></div>
+          <div class="card span2"><div class="card-head"><span class="label">Scans, last 7 days</span><ul class="legend" id="week-legend"></ul></div><div class="card-body"><div class="week" id="chart-week"></div></div></div>
+          <div class="card span2"><div class="card-head"><span class="label">Route mix</span><span class="label" id="avg-conf"></span></div>
+            <div class="card-body mix"><div class="donut"><svg viewBox="0 0 100 100" id="donut" aria-hidden="true"></svg><div class="donut-c"><b id="donut-pct">0%</b><span>kept in use</span></div></div><ul class="legend legend-col" id="mix-legend"></ul></div></div>
+          <div class="card span2"><div class="card-head"><span class="label">Item categories</span></div><div class="card-body"><div class="hbars" id="chart-cat"></div></div></div>
+          <div class="card span2"><div class="card-head"><span class="label">Recent scans</span></div><div class="card-body"><ul class="recent" id="recent-list"></ul></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container">ReRoute AI · Advice is general; check local waste rules.</div></footer>
+  <script src="app.js"></script>
+</body>
+</html>
