@@ -1,2 +1,15 @@
+[project]
+name = "reroute-ai"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "python-multipart",
+    "httpx",
+    "python-dotenv",
+    "pillow"
+]
+
 [tool.vercel]
 entrypoint = "backend.main:app"
